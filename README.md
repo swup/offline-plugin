@@ -6,6 +6,10 @@ A [swup](https://swup.js.org) plugin for making content available offline.
 - Prevent new network requests while offline
 - Display a notification when network status changes
 
+> [!WARNING]
+> This plugin is in **very early** public development. Features and APIs will not be
+> stable for a while, things can and will change.
+
 ## Installation
 
 Install the plugin from npm and import it into your bundle.
