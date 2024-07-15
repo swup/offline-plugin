@@ -60,7 +60,7 @@ export default class SwupOfflinePlugin extends Plugin {
 
 	unmount() {
 		// Remove online/offline getter from swup instance
-		delete this.swup.online;
+		// delete this.swup.online;
 
 		// Remove network status change listener
 		window.removeEventListener('online', this.handleNetworkStatusChange);
@@ -93,12 +93,12 @@ export default class SwupOfflinePlugin extends Plugin {
 		return defaultHandler!(visit, args);
 	};
 
-	protected preloadOfflinePage(): Promise<PageData> {
+	public preloadOfflinePage(): Promise<PageData> {
 		const { url } = Location.fromUrl(this.options.offlinePage);
 		return this.swup.fetchPage(url);
 	}
 
-	protected getOfflinePage(): PageData | undefined {
+	public getOfflinePage(): PageData | undefined {
 		const { url } = Location.fromUrl(this.options.offlinePage);
 		return this.swup.cache.get(url);
 	}
